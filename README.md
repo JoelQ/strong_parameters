@@ -1,4 +1,4 @@
-= Strong Parameters
+# Strong Parameters
 
 With this plugin Action Controller parameters are forbidden to be used in Active Model mass assignments until they have been whitelisted. This means you'll have to make a conscious choice about which attributes to allow for mass updating and thus prevent accidentally exposing that which shouldn't be exposed.
 
@@ -39,7 +39,7 @@ params.permit(:name, friends: [ :name, { family: [ :name ] }])
 
 Thanks to Nick Kallen for the permit idea!
 
-== Installation
+## Installation
 
 In Gemfile:
 
@@ -54,14 +54,14 @@ class Post < ActiveRecord::Base
 end
 ```
 
-If you want to now disable the default whitelisting that occurs in later versions of Rails, change the +config.active_record.whitelist_attributes+ property in your +config/application.rb+:
+If you want to now disable the default whitelisting that occurs in later versions of Rails, change the `config.active_record.whitelist_attributes` property in your `config/application.rb`:
 
 ```ruby
 config.active_record.whitelist_attributes = false
 ```
 
-This will allow you to remove / not have to use +attr_accessible+ and do mass assignment inside your code and tests.
+This will allow you to remove / not have to use `attr_accessible` and do mass assignment inside your code and tests.
 
-== Compatibility
+## Compatibility
 
 This plugin is only fully compatible with Rails versions 3.0, 3.1 and 3.2 but not 4.0+, as it is part of Rails Core in 4.0.
